@@ -48,8 +48,8 @@
 
 %This paper presents a method for elbow joint angle estimation through the measurement of surface electromyography from the biceps, triceps and brachioradialis. This estimation has great importance for either mechanical modeling of biologic systems and bio-inspired mechanisms. However interpreting and processing electromyography signals is challenging due to nonlinearities, unmodeled muscle dynamics and interference signals. Here a model is proposed based on experimental data of the elbow movement and the EMG recordings of the biceps brachii, triceps brachii and brachioradialis. A system identification method is applied to estimate an Auto-Regressive Moving Average with Exogenous Input (ARMAX) model to calculate the elbow joint angle using the acquired EMG data as input to the system. The results show that the proposed model achieves great values for both correlation and mean-square-root error when compared to the measured angle data, proving to be an effective model for the EMG-to-angle relation.
 
-Estimation of a model that relates the surface electromyography (sEMG) to the joint angle is of major importance for the design of human robot interfaces, biomimetic mechanisms and to model muscular systems. However, to obtain information from electromyographic signals is challenging due to nonlinearities, unmodeled muscle dynamics, noise and interference. In this paper, we applied system identification methods to estimate the parameters of a Hammerstein Wiener model that relates sEMG from three muscles of the arm (biceps brachii, triceps brachii and brachioradialis) to the elbow joint angle. In order to determine an estimation model and a calibration procedure, a set of experiments were carried out with two subjects. The experiment consisted of a series of elbow flexion and extension movements with different weights (0kg, 1.5kg and 3kg) and two different types of movement: continuous and intermittent, with controlled velocity. The sEMG and angular data were recorded during the experiment. The chosen model for system identification was the Hammerstein-Wiener with Wavelet Network as input and output nonlinearities. A second experiment was conducted in a different day in order to validate the estimated models. The results show a procedure to estimate a model for the EMG-to-Joint Angle, presenting high correlation and low Root-Mean-Square Errors (RMSE) with respect to the measured data: Correlation values of $94.90 \pm 3.92\%$ and RMSE values of $10.82 \pm 3.73^\circ$. 
-These models are candidates to help in the control of actuated prosthetic and orthotic devices.
+Estimation of a model that relates the surface electromyography (sEMG) to the joint angle is of major importance to design human robot interfaces, to control biomimetic mechanisms and to model muscular systems. However, it is challenging to obtain information from electromyographic signals due to nonlinearities, unmodeled muscle dynamics, noise and interference. In this paper, we applied system identification methods to estimate the parameters of a Hammerstein Wiener model that relates sEMG from three muscles of the arm (biceps brachii, triceps brachii and brachioradialis) to the elbow joint angle. In order to determine an estimation model and a calibration procedure, a set of experiments were carried out with two subjects. The experiment consisted of a series of elbow flexion and extension movements with different weights (0kg, 1.5kg and 3kg) and two different types of movement: continuous and intermittent, with controlled velocity. The sEMG and angular data were recorded during the experiment. The chosen model for system identification was the Hammerstein-Wiener with Wavelet Network as input and output nonlinearities. A second experiment was conducted in a different day in order to validate the estimated models. The results show a procedure to estimate a model for the EMG-to-Joint Angle, showing high correlations and coefficient of determination as well as low Root-Mean-Square Errors (RMSE) with respect to the measured data: correlations of $94.90 \pm 3.92\%$, coefficients of determination of $0.8814 \pm 0.0978$ and RMSE values of $10.82 \pm 3.73^\circ$. 
+These models are interesting candidates to help in the control of actuated prosthetic and orthotic devices.
 
 %This paper presents a method to estimate the elbow joint angle from surface electromyography (sEMG) through nonlinear system identification. The sEMG data of biceps, triceps and brachioradialis was acquired for use as model input. This estimation is of major importance for the design of human robot interfaces based on sEMG. It is also very important to model the muscular system and to design biomimetic mechanisms. However, the processing and interpretation of electromyography signals is challenging due to nonlinearities, unmodeled muscle dynamics noise and interferences. In order to determine an estimation model and a calibration procedure for the model parameters, a set of experiments were carried out with two subjects. The experiments consisted of series of continuous (cyclical) and discrete elbow flexo-extensions. The sEMG data from the biceps brachii, triceps brachii and brachioradialis and the joint angle were recorded. The system was modeled as a Hammerstein-Wiener model. A second experiment was performed in order to validate the estimation procedure. Using wavelet networks as input and output nonlinearities presented the best results for this experiment. The results show an effective model for the EMG-to-angle relation with great values for both correlation and mean-square-root error when compared to the measured angle data.
 
@@ -131,7 +131,7 @@ A mathematical system modeling should consider the EMG to muscle force generatio
       \label{ModelMuscle-Joint}
    \end{figure}
 
-It is important to note that human models are complex and nonlinear because biosignals are noisy and varied  \cite{kato2015}. With that in mind, one considerable advantage of using system identification as estimation technique is that it is possible to model the system as a black box. This allows the model estimation to be calculated without precise knowledge about muscles and joint dynamics \cite{Abbasi-Asl2011}. The estimation proposed in this paper must be able to predict nonlinearities both on the input signals, since EMG signal presents nonlinearities, and output signal, because the movement of the elbow joint also has nonlinearities (e.g. arm movement is affected by gravity force). Considering these characteristics, the Hammerstein-Wiener model is a potential candidate for EMG-to-angle model estimation, since it is capable of estimating models from a black-box structure and predicting nonlinearities on both input and output signals. The Hammerstein-Wiener models have been previously used to estimate joint torque using EMG signals \cite{Abbasi-Asl2011,sab2010,clancy2012}. To our knowledge, no other authors used Hammerstein-Wiener models to estimate joint angle using EMG signals. We performed a search at Scopus.com using the terms ("EMG" OR "Electromyography") AND "Hammerstein-Wiener" in "All Fields". The results showed works containing parameter identification and the previously mentioned EMG to muscle force modeling.
+It is important to note that human models are complex and nonlinear \cite{kato2015}. One considerable advantage of using system identification as estimation technique is that it is possible to model the system as a black box. This allows the model estimation to be calculated without precise knowledge about muscles and joint dynamics \cite{Abbasi-Asl2011}. The estimation procedure proposed in this paper must be able to predict nonlinearities both on the input signals, since EMG signal presents nonlinearities, and output signals, because the movement of the elbow joint also has nonlinearities (e.g. arm movement is affected by gravity force). Considering these characteristics, the Hammerstein-Wiener model is a potential candidate for EMG-to-angle model estimation, since it is capable of estimating models from a black-box structure and predicting nonlinearities on both input and output signals. The Hammerstein-Wiener models have been previously used to estimate joint torque using EMG signals \cite{Abbasi-Asl2011,sab2010,clancy2012}. To our knowledge, no other authors used Hammerstein-Wiener models to estimate joint angle using EMG signals. We performed a search at Scopus.com using the terms ("EMG" OR "Electromyography") AND "Hammerstein-Wiener" in "All Fields". The results showed works containing parameter identification and the previously mentioned EMG to muscle force modeling.
 
 The goal of this manuscript is to present the results of using Hammerstein-Wiener models to estimate the elbow joint angle, using the sEMG signals from biceps brachii, triceps brachii and brachioradialis, acquired through an experiment, as inputs to the system.
 
@@ -142,7 +142,7 @@ The paper is organized as follows: Section II presents the methods for experimen
 Two volunteers (age: 21 and 22 years, height: 1.92 m and 1.76 m, weight: 90 kg and 76 kg, both male, both right-handed) without known neuromuscular deficit participated in the experiments. The angle of the elbow joint as well as the surface Electromyography (sEMG) of three right arm muscles (biceps brachii,  triceps brachii and brachioradialis) were recorded. 
 sEMG was measured with 3 pairs of BTS FREEEMG 1000 (BTS Spa, Italy) electrodes with an electrode separation of 20mm with the electrode diameter being 4mm. A pair of electrodes was placed on the biceps and other pair on the triceps following the SENIAM guidelines \cite{SENIAM20170110}. To determine the electrode positions of the brachioradialis muscle, the subject was asked to apply force to flex the forearm while keeping it at \(90^{\circ}\). Then, the electrodes were placed on the muscle belly separated by 20mm following the muscle fiber direction. The sampling rate was of 1kHz with 16 bit resolution. The user interface was the BTS FREEEMG software.
 
-An Inertial Measurement Unit (IMU, VN-100 from VectorNav, TX, USA), with six degrees of freedom, with \(0.01^{\circ}\) precision, was used to measure the joint angle during the movement. The angle data was acquired with an acquisition rate of 100 samples/second, using Matlab\textsuperscript{\textregistered} (The Mathworks Inc, USA) as the software for data acquisition and storage.
+An Inertial Measurement Unit (IMU, VN-100 from VectorNav, TX, USA), with six degrees of freedom and \(0.01^{\circ}\) precision, was used to measure the joint angle during the movement. The angle data was acquired with an acquisition rate of 100 samples/second, using Matlab\textsuperscript{\textregistered} (The Mathworks Inc, USA) as the software for data acquisition and storage.
 
 
 \subsection{Experimental Protocol}
@@ -267,6 +267,34 @@ RMSE = \sqrt[]{mean((y-\hat{y})^2)}
 
 Where $y$ is the measured angle and $\hat{y}$ is the estimated angle.
 
+The coefficient of determination $R^2$ was also used to measure the fitness of the proposed model.
+
+\begin{equation}
+\label{eq:coeffDet}
+R^2 = 1 - \frac{SS_{res}}{SS_{tot}}
+\end{equation}
+
+Where
+
+\begin{equation}
+\label{eq:SSres}
+SS_{res} = \sum_{i=1}(y_i-\hat{y_i})^2
+\end{equation}
+
+\begin{equation}
+\label{eq:SStot}
+SS_{tot} = \sum_{i=1}(y_i-\bar{y})^2
+\end{equation}
+
+\begin{equation}
+\label{eq:bary}
+\bar{y} = \frac{1}{n} \sum_{i=1}^{n} y_i
+\end{equation}
+
+Where $\bar{y}$ is the mean value of the measured angles.
+
+% Adicionar parágrafo: The coefficient of determination was also used to test the fitness of the proposed model. Inserir equação do coefi
+
 % The chosen method for the modeling of the relationship between elbow joint angle and sEMG was a system identification method called Auto Regressive Moving Average with Exogenous Input (ARMAX). The ARMAX model has the following form:
 
 % For each model, the data acquired from each test subject was separated by weight lifted and the data from the continuous movement and the intermittent movement were merged. This way, it was possible to calculate a single model for the arm movement using the system identification tool in Matlab\textsuperscript{\textregistered}.
@@ -289,7 +317,7 @@ Where $y$ is the measured angle and $\hat{y}$ is the estimated angle.
 
 \section{Results}
 
-The model orders calculated are presented in table \ref{ta:order}. The input and output nonlinearity that achieved highest fitness values was the Wavelet Network.
+The model orders calculated are presented in table \ref{ta:order}. Since the system is using three inputs, $n_b, n_f$ and $n_k$ are three dimensional. The input and output nonlinearity that achieved highest fitness values was the Wavelet Network.
 
 \begin{table}[h]
 \caption{Model orders for each subject}
@@ -315,27 +343,27 @@ Subject 2 & 7, 12, 15 & 2, 3, 14 & 11, 1, 11\\
    
    \begin{table*}[h]
    \vspace{2mm}
-\caption{Correlation factor and Root-mean-square error for the calculated and measured angle values}
+\caption{Correlation factor, coefficient of determination and Root-mean-square error for the calculated and measured angle values}
 \label{ta:correlation}
 \centering
 \resizebox{0.99\textwidth}{!}{%
-\begin{tabular}{|c c|c c|c c|c c|c c|c c|c c|}
+\begin{tabular}{|c c|c c c|c c c|c c c|c c c|c c c|c c c|}
 \hline
-\multicolumn{2}{|c|}{} & \multicolumn{4}{c|}{Model Estimation, first test set} & \multicolumn{4}{c|}{Same model, second test set} & \multicolumn{4}{c|}{New model, same orders, second test set} \\
+\multicolumn{2}{|c|}{} & \multicolumn{6}{c|}{Model Estimation, first test set} & \multicolumn{6}{c|}{Same model, second test set} & \multicolumn{6}{c|}{New model, same orders, second test set} \\
 \hline
-\multicolumn{2}{|c|}{} & \multicolumn{2}{c|}{Continuous} & \multicolumn{2}{c|}{Intermittent} & \multicolumn{2}{c|}{Continuous} & \multicolumn{2}{c|}{Intermittent} & \multicolumn{2}{c|}{Continuous} & \multicolumn{2}{c|}{Intermittent} \\
+\multicolumn{2}{|c|}{} & \multicolumn{3}{c|}{Continuous} & \multicolumn{3}{c|}{Intermittent} & \multicolumn{3}{c|}{Continuous} & \multicolumn{3}{c|}{Intermittent} & \multicolumn{3}{c|}{Continuous} & \multicolumn{3}{c|}{Intermittent} \\
 \hline
-\multicolumn{2}{|c|}{} & Correlation & RMSE & Correlation & RMSE & Correlation & RMSE & Correlation & RMSE & Correlation & RMSE & Correlation & RMSE\\
+\multicolumn{2}{|c|}{} & Correlation & $R^2$ & RMSE & Correlation & $R^2$ & RMSE & Correlation & $R^2$ & RMSE & Correlation & $R^2$ & RMSE & Correlation & $R^2$ & RMSE & Correlation & $R^2$ & RMSE\\
 \hline \hline
 
-& 0 kg &0.9623 &9.394 &0.9624 &12.91 & 0.8780 & 17.86 & 0.9697 & 9.647 &0.9525 &7.898 & 0.9708 &12.79\\
-Subject 1 & 1.5 kg &0.9780 &7.390 &0.9865 & 6.846 &0.9129 &14.21 & 0.9666 & 8.870 &0.9169 &11.15 &0.9328 &13.50 \\
-& 3 kg &0.9816 &6.796 &0.9631 &11.477 & 0.9330 & 10.31 & 0.7956 & 22.70 &0.9497 &8.860 &0.9730 &12.03\\
+& 0 kg &0.9623 & 0.9232 & 9.394 &0.9624 & 0.8932 &12.91 & 0.8780 & 0.5114 & 17.86 & 0.9697 & 0.9205 & 9.647 &0.9525 & 0.9044 &7.898 & 0.9708 & 0.8602 &12.79\\
+Subject 1 & 1.5 kg &0.9780 & 0.9480 &7.390 &0.9865 & 0.9714 & 6.846 &0.9129 & 0.7403 &14.21 & 0.9666 & 0.9339 & 8.870 &0.9169 & 0.8400 &11.15 &0.9328 & 0.8470 &13.50 \\
+& 3 kg &0.9816 & 0.9499 &6.796 &0.9631 & 0.9200 &11.477 & 0.9330 & 0.8526 & 10.31 & 0.7956 & 0.6161 & 22.70 &0.9497 & 0.8912 &8.860 &0.9730 & 0.8923 &12.03\\
 \hline
 
-& 0 kg &0.9729 &7.662 &0.9620 &10.10 & 0.8825 & 16.44 & 0.9330 & 13.98 &0.9787 &7.062 &0.9620 &11.45\\
-Subject 2 & 1.5 kg &0.9596 &8.9476 &0.9493 & 11.62 & 0.9754 & 7.927 & 0.9413 & 14.09 &0.9838 &5.976 &0.9211 &15.12\\
-& 3 kg &0.9788 &6.733 &0.9808 &6.540& 0.8767 & 15.35 & 0.9625 & 11.02 &0.9847 &5.614 &0.9721 &9.246\\
+& 0 kg &0.9729 & 0.9440 &7.662 &0.9620 & 0.9244 &10.10 & 0.8825 & 0.7669 & 16.44 & 0.9330 & 0.8657 & 13.98 &0.9787 & 0.9570 &7.062 &0.9620 & 0.9099 &11.45\\
+Subject 2 & 1.5 kg &0.9596 & 0.9202 &8.9476 &0.9493 & 0.8859 & 11.62 & 0.9754 & 0.9425 & 7.927 & 0.9413 & 0.8683 & 14.09 &0.9838 & 0.9673 &5.976 &0.9211 & 0.8482 &15.12\\
+& 3 kg &0.9788 & 0.9556 &6.733 &0.9808 & 0.9612 &6.540& 0.8767 & 0.7668 & 15.35 & 0.9625 & 0.9191 & 11.02 &0.9847 & 0.9688 &5.614 &0.9721 & 0.9431 &9.246\\
 \hline
 
 \end{tabular}%
@@ -354,9 +382,9 @@ The data acquired from the second experimental set were also used to generate a 
    
 
 
-To better determine the accuracy of the model, two performance parameters were used: the correlation coefficient and the Root-Mean-Square Error (RMSE) between the estimated and the measured elbow joint angles. Table \ref{ta:corr} shows the accuracy performance parameters for each participant and every test set. The different results for each method described above are presented in columns. First, using the first data set to estimate a model and comparing the result to the measured angle values; second, using the same model calculated for the first experimental set to estimate the angle, but using the data from the second experimental set as input to the model; and finally, using the same model orders chosen from the first experimental set, a new model was generated based on the second data set and comparing the output to the measured angle data.
+To better determine the accuracy of the model, three performance parameters were used: the correlation coefficient, the determination coefficient and the Root-Mean-Square Error (RMSE) between the estimated and the measured elbow joint angles. Table \ref{ta:corr} shows the accuracy performance parameters for each participant and every test set. The different results for each method described above are presented in columns. First, using the first data set to estimate a model and comparing the result to the measured angle values; second, using the same model calculated for the first experimental set to estimate the angle, but using the data from the second experimental set as input to the model; and finally, using the same model orders chosen from the first experimental set, a new model was generated based on the second data set and comparing the output to the measured angle data.
 
-The estimated models achieved correlation values of $94.90 \pm 3.92\%$ and RMSE values of $10.82 \pm 3.73^\circ$
+The estimated models achieved correlation values of $94.90 \pm 3.92\%$, coefficient of determination of $0.8814 \pm 0.0978$ and RMSE values of $10.82 \pm 3.73^\circ$
 
 
 \section{Discussion}
@@ -373,18 +401,7 @@ This paper proposed a method to estimate the elbow joint angle based on the meas
 The experimental data showed that it is possible to use the EMG data to estimate the joint angle, with prior knowledge of the weight being lifted, at least for the experimental conditions performed during the tests.
 %Even though estimating one model for continuous movement and another one for discrete movement gives higher precision, it is possible to calculate a single model for both movements.
 
-The results achieved with this procedure had similar precision values as reported by other authors using different methods \cite{Rahmatian2016158,Mamikoglu2016785,Pang2015165,Liu1999391}. Even though other authors used the Hammerstein-Wiener model to determine EMG-to-Muscle Force relation instead of a EMG-to-Angle relation, the results show similar precision values \cite{Abbasi-Asl2011,sab2010,clancy2012}
-For the majority of simulations, the model achieved values of correlation over $90\%$ and RMSE under $15^\circ$.
-
-%As stated before, by lifting different weights the model parameters are altered. For the same test subject the A(q) and C(q) parameters (see eq. 3) maintained values with less than 1\% difference from one another, while the B(q) values assumed a greater range of values.
-
-%Even for different subjects, the estimated A(q) and C(q) parameters also had a difference of less than 1\% from one another.
-
-%From the seven subjects, six of them could be estimated by an ARMAX model with the same parameters order. The test subject with different order parameters was the one that presented the worst readings of the brachioradialis muscle EMG. Because of that, a lot of noise is introduced, requiring a higher order system to overcome the modeling errors. The brachioradialis is the most difficult muscle to read the sEMG signals compared to the biceps brachii and the triceps brachii. This difficulty is due to the muscle short length causing the electrodes to stay close to the tendon, which induces  reading errors. Not coincidentally, this test subject was the one with smaller stature.
-
-%The repeatability of the model was successful for the cases studied in this work, even though it is possible to note that the model is not as precise as it was for the calibration procedure.
-
-\addtolength{\textheight}{-7.5cm}   % This command serves to balance the column lengths
+\addtolength{\textheight}{-4cm}   % This command serves to balance the column lengths
                                   % on the last page of the document manually. It shortens
                                   % the textheight of the last page by a suitable amount.
                                   % This command does not take effect until the next page
@@ -407,11 +424,24 @@ For the majority of simulations, the model achieved values of correlation over $
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-For both subjects, in the worst case, correlation was above $87\%$ and RMSE below $23^\circ$. It is possible to note that the simulation results when using the same model for different data inputs are worse than the results presented when using the same data used for model calibration. Since the EMG signals may change between tests, due to slight changes in electrode position, tissue properties or temperature \cite{soderberg1975}, it may not be possible to determine a model capable of estimating the joint angle for data acquired on different days or test setups with the same quality of results. But even in this case, these results can be favorably compared to other similar works \cite{Rahmatian2016158,Mamikoglu2016785,Pang2015165,Liu1999391}. More investigation is required to determine if those models are capable of estimating the joint angle for any test conducted with these test subjects.
+The results achieved with this procedure had similar precision values as reported by other authors using different methods \cite{Rahmatian2016158,Mamikoglu2016785,Pang2015165,Liu1999391}. Even though other authors used the Hammerstein-Wiener model to determine EMG-to-Muscle Force relation instead of a EMG-to-Angle relation, the results show similar precision values \cite{Abbasi-Asl2011,sab2010,clancy2012}
+For the majority of simulations, the model achieved values of correlation over $90\%$, coefficient of determination over $0.9$ and RMSE under $15^\circ$.
+
+%As stated before, by lifting different weights the model parameters are altered. For the same test subject the A(q) and C(q) parameters (see eq. 3) maintained values with less than 1\% difference from one another, while the B(q) values assumed a greater range of values.
+
+%Even for different subjects, the estimated A(q) and C(q) parameters also had a difference of less than 1\% from one another.
+
+%From the seven subjects, six of them could be estimated by an ARMAX model with the same parameters order. The test subject with different order parameters was the one that presented the worst readings of the brachioradialis muscle EMG. Because of that, a lot of noise is introduced, requiring a higher order system to overcome the modeling errors. The brachioradialis is the most difficult muscle to read the sEMG signals compared to the biceps brachii and the triceps brachii. This difficulty is due to the muscle short length causing the electrodes to stay close to the tendon, which induces  reading errors. Not coincidentally, this test subject was the one with smaller stature.
+
+%The repeatability of the model was successful for the cases studied in this work, even though it is possible to note that the model is not as precise as it was for the calibration procedure.
+
+
+
+For both subjects, in the worst case, correlation was above $79\%$, coefficient of determination above $0.5$ and RMSE below $23^\circ$. It is possible to note that the simulation results when using the same model for different data inputs are worse than the results presented when using the same data used for model calibration. Since the EMG signals may change between tests, due to slight changes in electrode position, tissue properties or temperature \cite{soderberg1975}, it may not be possible to determine a model capable of estimating the joint angle for data acquired on different days or test setups with the same quality of results. But even in this case, these results can be favorably compared to other similar works \cite{Rahmatian2016158,Mamikoglu2016785,Pang2015165,Liu1999391}. More investigation is required to determine if those models are capable of estimating the joint angle for any test conducted with these test subjects.
 
 The same model orders calculated through the first experimental set can be used for other test sessions, without loss of accuracy. Even though environmental noise and other undesirable signals affect the EMG signal, it does not change the system order.
 
-In future work, we will apply the techniques used in this work to a larger set of subjects. Also, we will further study the usage of system identification, analyzing the possibility of estimating a weight-independent model and/or a subject-independent model. These models will be used as part of an EMG-driven control system for exoskeletons.
+In future work, we will apply the techniques used in this work to a larger set of subjects. Also, we will further study the use of system identification, in two ways, one, assessing the possibility of a weight-independent model estimator and, second, the estimation of a subject-independent model. Real-time testing will be performed as these models will be used as part of an EMG-driven control system for exoskeletons.
 
 
 
